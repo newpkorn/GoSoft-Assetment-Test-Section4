@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <title>Selenium test page</title>
+    <script type="text/javascript">
+        function getDate() {
+            const current = new Date();
+            var month = (1 + current.getMonth()).toString();
+            month = month.length > 1 ? month : '0' + month;
+            var day = current.getDate().toString();
+            day = day.length > 1 ? day : '0' + day;
+            var hour = current.getHours().toString();
+            hour = hour.length > 1 ? hour : '0' + hour;
+            var minute = current.getMinutes().toString();
+            minute = minute.length > 1 ? minute : '0' + minute;
+            return date = `${current.getFullYear()}${month}${day}${hour}${minute}`;
+        }
+        function fetchData() {
+            window.setTimeout(function () {
+                document.getElementById('result').textContent = getDate();
+            }, Math.floor(Math.random() * (5000 - 1000)) + 1000
+            );
+        }
+    </script>
+    <style>
+        .container:nth-of-type(odd) {
+            visibility: hidden
+        }
+    </style>
+</head>
+
+<body>
+    <h2>
+        Fetch data from caretakers:
+    </h2>
+    <div class="frame">
+        <div>
+            <span>
+                <div id="result">
+                </div>
+            </span>
+            <button type="button" onclick="fetchData()">Send</button>
+        </div>
+        <h4>
+            Animals to monitor:
+        </h4>
+        <div class="container main">
+            <div class="container">Zebra</div>
+            <div class="container">Rhino</div>
+            <div class="container">Elephant</div>
+            <div class="container">Gazelle</div>
+            <div class="container">Lion</div>
+        </div>
+    </div>
+</body>
+
+</html>
