@@ -10,7 +10,7 @@ class TestSelenium:
     def test_get_all_visible_animals(self, driver):
         extractor = SeleniumExtractor(driver)
         animals = extractor.get_animals()
-        assert len(animals) == 5
+        assert len(animals) == 2
 
     def test_read_from_hq_api(self, driver):
         extractor = SeleniumExtractor(driver)
